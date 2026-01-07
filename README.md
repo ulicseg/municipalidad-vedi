@@ -1,6 +1,6 @@
-# Sitio Web Oficial - Municipalidad de General Vedia
+# Sitio Web - Municipalidad de General Vedia
 
-Este repositorio contiene el código fuente del sitio web oficial de la **Municipalidad de General Vedia** (Chaco), desarrollado como una plataforma moderna de comunicación y gestión para la comunidad bajo la gestión del Intendente Jose Liras.
+Este repositorio contiene el código fuente del sitio web oficial de la **Municipalidad de General Vedia** (Chaco), desarrollado como una plataforma moderna de comunicación y gestión.
 
 ## 📋 Descripción del Proyecto
 El objetivo principal es crear una presencia digital institucional que facilite el acceso a la información pública, trámites y servicios municipales, además de fomentar el turismo y la identidad cultural de la localidad, conocida como la *"Cuna del Escudo Chaqueño"*.
