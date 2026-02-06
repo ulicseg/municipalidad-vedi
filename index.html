@@ -233,8 +233,99 @@ function toggleEventoDetalle() {
 <p class="text-gray-600 mt-2 text-base sm:text-lg">Mantente informado sobre lo que pasa en nuestra ciudad</p>
 <div class="w-16 h-1.5 bg-nature-gradient mx-auto mt-4 rounded-full"></div>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-<article class="group bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer">
+<!-- Controles del carrusel -->
+<div class="flex justify-end gap-2 mb-4">
+<button onclick="scrollNoticias('left')" class="w-10 h-10 bg-white hover:bg-primary-dark hover:text-white border-2 border-gray-200 hover:border-primary-dark rounded-full flex items-center justify-center transition-all duration-300 shadow-md">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button onclick="scrollNoticias('right')" class="w-10 h-10 bg-white hover:bg-primary-dark hover:text-white border-2 border-gray-200 hover:border-primary-dark rounded-full flex items-center justify-center transition-all duration-300 shadow-md">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<!-- Carrusel horizontal de noticias -->
+<div id="noticias-carousel" class="overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth pb-4" style="scrollbar-width: none; -ms-overflow-style: none;">
+<div class="flex gap-4 sm:gap-6" style="width: max-content;">
+<article onclick="abrirNoticiaModal('Fiesta del Río, Mate y Tereré', 'images/fiesta-rio-mate-terere.jpg', 'Eventos', 'Sábado 7 y Domingo 8 de Febrero', 'La Municipalidad de General Vedia estará presente en la 10° edición de la Fiesta del Río, Mate y Tereré con un stand difundiendo los atractivos turísticos de nuestro pueblo. ¡Visitá nuestro stand y conocé todo lo que Vedia tiene para ofrecer!', 'Provincia de Formosa', 'bg-primary/10 text-primary-dark')" class="group bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer flex-shrink-0" style="width: 300px;">
+<div class="relative h-40 sm:h-48 bg-gradient-to-br from-teal-100 to-green-100 overflow-hidden">
+<img src="images/fiesta-rio-mate-terere.jpg" alt="Fiesta del Río, Mate y Tereré" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+</div>
+<div class="p-4 sm:p-5">
+<span class="inline-block px-2 py-1 bg-primary/10 text-primary-dark text-xs font-semibold rounded-full mb-1.5 sm:mb-2">Eventos</span>
+<h3 class="text-base sm:text-lg font-bold text-gray-900 mb-1.5 sm:mb-2">Fiesta del Río, Mate y Tereré</h3>
+<p class="text-xs sm:text-sm text-gray-500 mb-2 sm:mb-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-base">calendar_today</span>
+Sábado 7 y Domingo 8 de Febrero
+</p>
+<p class="text-xs text-gray-600 leading-relaxed">
+La Municipalidad de General Vedia estará presente en la 10° edición de la Fiesta del Río, Mate y Tereré con un stand difundiendo los atractivos turísticos de nuestro pueblo. ¡Visitá nuestro stand y conocé todo lo que Vedia tiene para ofrecer!
+</p>
+</div>
+</article>
+<article onclick="abrirNoticiaModal('Torneo de Beach Voley Masculino', 'images/torneo-beach-voley.jpg', 'Deportes', '8 de Febrero, 2026 - 16:00 HS', 'Este domingo se realiza el Torneo Departamental de Beach Voley Masculino en el Balneario Municipal. Equipos de 2 jugadores con premios para 1er y 2do puesto. Inscripciones e info: 3624-111642. ¡No te lo pierdas!', 'Balneario Municipal', 'bg-orange-100 text-orange-700')" class="group bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer flex-shrink-0" style="width: 300px;">
+<div class="relative h-40 sm:h-48 bg-gradient-to-br from-orange-100 to-yellow-100 overflow-hidden">
+<img src="images/torneo-beach-voley.jpg" alt="Torneo Beach Voley" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+</div>
+<div class="p-4 sm:p-5">
+<span class="inline-block px-2 py-1 bg-orange-100 text-orange-700 text-xs font-semibold rounded-full mb-1.5 sm:mb-2">Deportes</span>
+<h3 class="text-base sm:text-lg font-bold text-gray-900 mb-1.5 sm:mb-2">Torneo de Beach Voley Masculino</h3>
+<p class="text-xs sm:text-sm text-gray-500 mb-2 sm:mb-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-base">calendar_today</span>
+8 de Febrero, 2026 - 16:00 HS
+</p>
+<p class="text-xs text-gray-600 leading-relaxed">
+Este domingo se realiza el Torneo Departamental de Beach Voley Masculino en el Balneario Municipal. Equipos de 2 jugadores con premios para 1er y 2do puesto. Inscripciones e info: 3624-111642. ¡No te lo pierdas!
+</p>
+</div>
+</article>
+<article onclick="abrirNoticiaModal('Liga Local de Veteranos Marcos Mendoza', 'images/liga-veteranos.jpg', 'Deportes', 'Inicia: 22 de Febrero, 2026', '¡Inscripciones abiertas hasta el 20/02! La liga de fútbol para veteranos regresa este año en la Cancha Auxiliar de 11. Cupos limitados. Para más información comunicarse al 3624-302325 con Raquel Zárate, Referente del Área de Deporte Municipal.', 'Cancha Auxiliar de 11', 'bg-orange-100 text-orange-700')" class="group bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer flex-shrink-0" style="width: 300px;">
+<div class="relative h-40 sm:h-48 bg-gradient-to-br from-green-100 to-emerald-100 overflow-hidden">
+<img src="images/liga-veteranos.jpg" alt="Liga de Veteranos" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+</div>
+<div class="p-4 sm:p-5">
+<span class="inline-block px-2 py-1 bg-orange-100 text-orange-700 text-xs font-semibold rounded-full mb-1.5 sm:mb-2">Deportes</span>
+<h3 class="text-base sm:text-lg font-bold text-gray-900 mb-1.5 sm:mb-2">Liga Local de Veteranos Marcos Mendoza</h3>
+<p class="text-xs sm:text-sm text-gray-500 mb-2 sm:mb-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-base">calendar_today</span>
+Inicia: 22 de Febrero, 2026
+</p>
+<p class="text-xs text-gray-600 leading-relaxed">
+¡Inscripciones abiertas hasta el 20/02! La liga de fútbol para veteranos regresa este año en la Cancha Auxiliar de 11. Cupos limitados. Para más información comunicarse al 3624-302325 con Raquel Zárate, Referente del Área de Deporte Municipal.
+</p>
+</div>
+</article>
+<article onclick="abrirNoticiaModal('Campaña de Seguridad Vial - Evite Multas', 'images/seguridad-vial.jpg', 'Seguridad', 'Campaña Permanente', 'Recordá: luces delanteras y traseras, licencia vigente, cédula del vehículo, condiciones óptimas del vehículo y velocidades permitidas. Prohibida la conducción de menores sin licencia habilitante. Tu seguridad es lo primero.', 'Municipalidad de Vedia', 'bg-blue-100 text-blue-700')" class="group bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer flex-shrink-0" style="width: 300px;">
+<div class="relative h-40 sm:h-48 bg-gradient-to-br from-blue-100 to-indigo-100 overflow-hidden">
+<img src="images/seguridad-vial.jpg" alt="Seguridad Vial" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+</div>
+<div class="p-4 sm:p-5">
+<span class="inline-block px-2 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full mb-1.5 sm:mb-2">Seguridad</span>
+<h3 class="text-base sm:text-lg font-bold text-gray-900 mb-1.5 sm:mb-2">Campaña de Seguridad Vial - Evite Multas</h3>
+<p class="text-xs sm:text-sm text-gray-500 mb-2 sm:mb-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-base">calendar_today</span>
+Campaña Permanente
+</p>
+<p class="text-xs text-gray-600 leading-relaxed">
+Recordá: luces delanteras y traseras, licencia vigente, cédula del vehículo, condiciones óptimas del vehículo y velocidades permitidas. Prohibida la conducción de menores sin licencia habilitante. Tu seguridad es lo primero.
+</p>
+</div>
+</article>
+<article onclick="abrirNoticiaModal('Cursos de la Fundación Tierra Fértil', 'images/fundacion-tierra-fertil.jpg', 'Educación', '7 de Febrero, 2026 - 09:00 HS', 'Este sábado la Fundación Tierra Fértil estará en la Plaza Héroes de Malvinas con su stand de inscripciones. Información sobre cursos, formaciones y qué se estudia en cada área. ¡Acercate y comenzá tu formación profesional!', 'Plaza Héroes de Malvinas', 'bg-primary/10 text-primary-dark')" class="group bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer flex-shrink-0" style="width: 300px;">
+<div class="relative h-40 sm:h-48 bg-gradient-to-br from-cyan-100 to-green-100 overflow-hidden">
+<img src="images/fundacion-tierra-fertil.jpg" alt="Cursos Fundación Tierra Fértil" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+</div>
+<div class="p-4 sm:p-5">
+<span class="inline-block px-2 py-1 bg-primary/10 text-primary-dark text-xs font-semibold rounded-full mb-1.5 sm:mb-2">Educación</span>
+<h3 class="text-base sm:text-lg font-bold text-gray-900 mb-1.5 sm:mb-2">Cursos de la Fundación Tierra Fértil</h3>
+<p class="text-xs sm:text-sm text-gray-500 mb-2 sm:mb-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-base">calendar_today</span>
+7 de Febrero, 2026 - 09:00 HS
+</p>
+<p class="text-xs text-gray-600 leading-relaxed">
+Este sábado la Fundación Tierra Fértil estará en la Plaza Héroes de Malvinas con su stand de inscripciones. Información sobre cursos, formaciones y qué se estudia en cada área. ¡Acercate y comenzá tu formación profesional!
+</p>
+</div>
+</article>
+<article onclick="abrirNoticiaModal('Inauguración de la Feria de Emprendedores', 'images/feria-artesanal.jpg', 'Eventos', '25 de Enero, 2026', 'Este sábado inauguramos la nueva feria de emprendedores locales en la plaza principal. Más de 30 puestos con artesanías, productos regionales, gastronomía y mucho más. De 10 a 20hs. ¡No te lo pierdas!', 'Plaza Principal', 'bg-primary/10 text-primary-dark')" class="group bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer flex-shrink-0" style="width: 300px;">
 <div class="relative h-40 sm:h-48 bg-gradient-to-br from-blue-100 to-green-100 overflow-hidden">
 <img src="images/feria-artesanal.jpg" alt="Feria" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
 </div>
@@ -245,12 +336,12 @@ function toggleEventoDetalle() {
 <span class="material-symbols-outlined text-base">calendar_today</span>
 25 de Enero, 2026
 </p>
-<p class="text-xs text-gray-600 leading-relaxed opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-96 transition-all duration-500 overflow-hidden">
+<p class="text-xs text-gray-600 leading-relaxed">
 Este sábado inauguramos la nueva feria de emprendedores locales en la plaza principal. Más de 30 puestos con artesanías, productos regionales, gastronomía y mucho más. De 10 a 20hs. ¡No te lo pierdas!
 </p>
 </div>
 </article>
-<article class="group bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer">
+<article onclick="abrirNoticiaModal('Campeonato de Fútbol: Vedia Campeón', 'images/premiacion-deportiva.jpg', 'Deportes', '22 de Enero, 2026', 'El equipo de Vedia se consagró campeón del torneo regional tras vencer 2-1 a Villa Ángela en una final emocionante. Gran actuación de todo el equipo. ¡Felicitaciones a todos los jugadores y cuerpo técnico!', 'Estadio Municipal', 'bg-orange-100 text-orange-700')" class="group bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer flex-shrink-0" style="width: 300px;">
 <div class="relative h-40 sm:h-48 bg-gradient-to-br from-orange-100 to-red-100 overflow-hidden">
 <img src="images/premiacion-deportiva.jpg" alt="Deportes" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
 </div>
@@ -261,12 +352,12 @@ Este sábado inauguramos la nueva feria de emprendedores locales en la plaza pri
 <span class="material-symbols-outlined text-base">calendar_today</span>
 22 de Enero, 2026
 </p>
-<p class="text-xs text-gray-600 leading-relaxed opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-96 transition-all duration-500 overflow-hidden">
+<p class="text-xs text-gray-600 leading-relaxed">
 El equipo de Vedia se consagró campeón del torneo regional tras vencer 2-1 a Villa Ángela en una final emocionante. Gran actuación de todo el equipo. ¡Felicitaciones a todos los jugadores y cuerpo técnico!
 </p>
 </div>
 </article>
-<article class="group bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer">
+<article onclick="abrirNoticiaModal('Cronograma de Vacunación Antigripal', 'images/colonia-verano.jpg', 'Salud', '20 de Enero, 2026', 'Comenzó la campaña de vacunación antigripal 2026. Dirigida a mayores de 65 años, embarazadas, niños de 6 a 24 meses y personal de salud. Acercate al centro de salud de lunes a viernes de 8 a 12hs.', 'Centro de Salud - Lunes a Viernes de 8 a 12hs', 'bg-red-100 text-red-700')" class="group bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer flex-shrink-0" style="width: 300px;">
 <div class="relative h-40 sm:h-48 bg-gradient-to-br from-red-100 to-pink-100 overflow-hidden">
 <img src="images/colonia-verano.jpg" alt="Salud" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
 </div>
@@ -277,12 +368,12 @@ El equipo de Vedia se consagró campeón del torneo regional tras vencer 2-1 a V
 <span class="material-symbols-outlined text-base">calendar_today</span>
 20 de Enero, 2026
 </p>
-<p class="text-xs text-gray-600 leading-relaxed opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-96 transition-all duration-500 overflow-hidden">
+<p class="text-xs text-gray-600 leading-relaxed">
 Comenzó la campaña de vacunación antigripal 2026. Dirigida a mayores de 65 años, embarazadas, niños de 6 a 24 meses y personal de salud. Acercate al centro de salud de lunes a viernes de 8 a 12hs.
 </p>
 </div>
 </article>
-<article class="group bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer">
+<article onclick="abrirNoticiaModal('Nuevos Horarios de Recolección', '', 'Servicios', '18 de Enero, 2026', 'A partir de febrero cambian los horarios de recolección de residuos. Zona centro: Martes y Viernes. Zona oeste: Lunes y Jueves. Zona este: Miércoles y Sábados. Horario: 7am. Recordá sacar tu basura la noche anterior.', 'Municipalidad de Vedia', 'bg-purple-100 text-purple-700')" class="group bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer flex-shrink-0" style="width: 300px;">
 <div class="relative h-40 sm:h-48 bg-gradient-to-br from-purple-100 to-blue-100 overflow-hidden flex items-center justify-center">
 <span class="material-symbols-outlined text-7xl sm:text-8xl text-purple-300">delete</span>
 </div>
@@ -293,14 +384,139 @@ Comenzó la campaña de vacunación antigripal 2026. Dirigida a mayores de 65 a�
 <span class="material-symbols-outlined text-base">calendar_today</span>
 18 de Enero, 2026
 </p>
-<p class="text-xs text-gray-600 leading-relaxed opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-96 transition-all duration-500 overflow-hidden">
+<p class="text-xs text-gray-600 leading-relaxed">
 A partir de febrero cambian los horarios de recolección de residuos. Zona centro: Martes y Viernes. Zona oeste: Lunes y Jueves. Zona este: Miércoles y Sábados. Horario: 7am. Recordá sacar tu basura la noche anterior.
 </p>
 </div>
 </article>
 </div>
 </div>
+</div>
 </section>
+
+<!-- Modal de Noticia Completa - Estilo Instagram -->
+<div id="noticia-modal" class="fixed inset-0 z-[100] bg-black/95 hidden flex items-center justify-center p-4" onclick="if(event.target === this) cerrarNoticiaModal()">
+<div class="bg-white rounded-lg max-w-lg w-full max-h-[95vh] overflow-y-auto shadow-2xl" onclick="event.stopPropagation()">
+<!-- Header -->
+<div class="flex items-center justify-between p-4 border-b border-gray-200">
+<div class="flex items-center gap-3">
+<img src="images/logo-vedia.jpg" alt="Vedia" class="w-10 h-10 rounded-full">
+<div>
+<p class="font-bold text-sm text-gray-900">Vedia Conecta</p>
+<p id="modal-noticia-fecha" class="text-xs text-gray-500">Fecha</p>
+</div>
+</div>
+<button onclick="cerrarNoticiaModal()" class="text-gray-600 hover:text-gray-900">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+
+<!-- Imagen -->
+<div class="relative w-full bg-white">
+<img id="modal-noticia-imagen" src="" alt="Noticia" class="w-full h-auto object-contain max-h-[60vh]" />
+<div id="modal-icono-container" class="hidden w-full h-96 bg-gradient-to-br from-purple-100 to-blue-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-9xl text-purple-300">delete</span>
+</div>
+</div>
+
+<!-- Contenido -->
+<div class="p-4">
+<!-- Categoría y Título -->
+<div class="mb-3">
+<span id="modal-noticia-categoria" class="inline-block px-2 py-1 text-xs font-bold rounded mb-2">Categoría</span>
+<h2 id="modal-noticia-titulo" class="text-xl font-bold text-gray-900">Título de la Noticia</h2>
+</div>
+
+<!-- Descripción -->
+<p id="modal-noticia-descripcion" class="text-gray-700 text-sm mb-3 leading-relaxed">
+Descripción de la noticia
+</p>
+
+<!-- Lugar -->
+<div class="flex items-center gap-2 text-sm text-gray-600 mb-4">
+<span class="material-symbols-outlined text-base">location_on</span>
+<span id="modal-noticia-lugar">Ubicación</span>
+</div>
+
+<!-- Botón compartir -->
+<button class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-2.5 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-xl">share</span>
+Compartir
+</button>
+</div>
+</div>
+</div>
+
+<style>
+#noticias-carousel::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+</style>
+
+<script>
+function scrollNoticias(direction) {
+    const carousel = document.getElementById('noticias-carousel');
+    const scrollAmount = 960; // 3 tarjetas de 300px + 2 gaps de 24px = 960px
+    
+    if (direction === 'left') {
+        carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else {
+        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+}
+
+function abrirNoticiaModal(titulo, imagen, categoria, fecha, descripcion, lugar, badgeClass) {
+    const modal = document.getElementById('noticia-modal');
+    const modalImagen = document.getElementById('modal-noticia-imagen');
+    const modalTitulo = document.getElementById('modal-noticia-titulo');
+    const modalCategoria = document.getElementById('modal-noticia-categoria');
+    const modalFecha = document.getElementById('modal-noticia-fecha');
+    const modalDescripcion = document.getElementById('modal-noticia-descripcion');
+    const modalLugar = document.getElementById('modal-noticia-lugar');
+    const modalIconoContainer = document.getElementById('modal-icono-container');
+    
+    // Actualizar contenido del modal
+    modalTitulo.textContent = titulo;
+    modalCategoria.textContent = categoria;
+    modalCategoria.className = 'inline-block px-3 py-1 text-xs font-bold rounded-full mb-2 uppercase tracking-wider ' + badgeClass;
+    modalFecha.textContent = fecha;
+    modalDescripcion.textContent = descripcion;
+    modalLugar.textContent = lugar;
+    
+    // Manejar imagen o icono
+    if (imagen) {
+        modalImagen.src = imagen;
+        modalImagen.classList.remove('hidden');
+        modalIconoContainer.classList.add('hidden');
+    } else {
+        modalImagen.classList.add('hidden');
+        modalIconoContainer.classList.remove('hidden');
+    }
+    
+    // Mostrar modal
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+function cerrarNoticiaModal() {
+    const modal = document.getElementById('noticia-modal');
+    modal.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+}
+
+// Opcional: Auto-scroll suave con el mouse/touch
+document.getElementById('noticias-carousel').addEventListener('wheel', (e) => {
+    if (e.deltaY !== 0) {
+        e.preventDefault();
+        e.currentTarget.scrollBy({ left: e.deltaY, behavior: 'auto' });
+    }
+}, { passive: false });
+</script>
+
 <!-- Guía Comercial Section -->
 <section id="guia-comercial" class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
 <div class="max-w-7xl mx-auto">
